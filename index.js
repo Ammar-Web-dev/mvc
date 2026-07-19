@@ -3,10 +3,10 @@ import dotenv from "dotenv";
 import UserRoute from "./Routes/user.js";
 import { connectDB } from "./Utils/mongodb.js";
 import cors from "cors";
-dotenv.config();
 import dns from "node:dns/promises"
 dns.setServers(["1.1.1.1" , "8.8.8.8"]);
 const app = express();
+dotenv.config();
 
 connectDB();
 
