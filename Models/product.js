@@ -12,10 +12,7 @@ const productSchema = new mongoose.Schema({
   description: {
     type: String,
   },
-  ownerUsername: {
-    type: String,
-    required: true,
-  },
+
 });
 
 export default mongoose.model("Product", productSchema);
