@@ -1,6 +1,6 @@
 import { signJWT } from "../Utils/jwt.js";
 import User from "../Models/user.js";
-import { hashPassword } from "../Utils/bcrypt.js";
+import { hashPassword , comparePassword } from "../Utils/bcrypt.js";
 
 export const loginUser = async (req, res) => {
   try {
@@ -15,7 +15,8 @@ export const loginUser = async (req, res) => {
     }
     const token = signJWT({ username: user.username, id: user._id });
     res.status(200).json({ token });
-  } catch (err) {
+  } catch (err) { 
+    console.error(err);
     res.status(500).json({ error: "Internal Server Error" });
   }
 };

@@ -15,6 +15,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+
 app.use("/products", productRoutes);
 app.use("/users", userRoutes);
 app.listen(5050, () => {
